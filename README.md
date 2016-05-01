@@ -20,6 +20,17 @@
 
 ### as 
     - use loads libraries and refers to their namespaces (giving you everything, which is usually/always overkill)
+     example :   
+     ```clojure
+     (:refer-clojure :exclude [filter remove seq])
+     ```
+     equivalent to 
+     ```clojure
+     (refer 'clojure.core :exclude [filter remove])
+     ```
+     
+### :refer-clojure 
+   - Same as (refer 'clojure.core <filters>)
 
 ### Tips
     - try to only use :require and :use inside of (ns ...). It's much cleaner this way. Don't use and require outside of (ns ..) unless you have a pretty good reason for it.
